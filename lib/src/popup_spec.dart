@@ -74,7 +74,8 @@ class PopupSpec {
 
   LatLng get markerPoint => markerPointOverride ?? marker.point;
 
-  Anchor get markerAnchor => markerAnchorOverride ?? marker.anchor;
+  Anchor get markerAnchor =>
+      markerAnchorOverride ?? marker.anchorPos?.anchor ?? Anchor(0.0, 0.0);
 
   ////////////////////////////
   /// Marker method proxies //

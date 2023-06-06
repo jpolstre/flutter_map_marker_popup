@@ -200,9 +200,12 @@ abstract class PopupContainerTransform {
     FlutterMapState mapState,
     PopupSpec popupSpec,
   ) {
-    return mapState
+    return (mapState.project(popupSpec.markerPoint) *
+            mapState.getZoomScale(mapState.zoom, mapState.zoom)) -
+        mapState.pixelOrigin;
+    /*mapState
             .project(popupSpec.markerPoint)
             .multiplyBy(mapState.getZoomScale(mapState.zoom, mapState.zoom)) -
-        mapState.pixelOrigin;
+        mapState.pixelOrigin;*/
   }
 }

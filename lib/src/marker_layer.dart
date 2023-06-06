@@ -77,8 +77,8 @@ class _MarkerLayerState extends State<MarkerLayer>
         _pxCache[i] = pxPoint;
       }
 
-      final width = marker.width - marker.anchor.left;
-      final height = marker.height - marker.anchor.top;
+      final width = marker.width - (marker.anchorPos?.anchor?.left ?? 0);
+      final height = marker.height - (marker.anchorPos?.anchor?.top ?? 0);
       var sw = CustomPoint(pxPoint.x + width, pxPoint.y - height);
       var ne = CustomPoint(pxPoint.x - width, pxPoint.y + height);
 
